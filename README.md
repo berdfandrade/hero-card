@@ -5,8 +5,7 @@ aplicação que consome uma API para exibir informações de um herói gerado
  aleatoriamente. O componente exibe os atributos e detalhes do herói em 
 um cartão.
 
-![944shots_so.png](/home/bernardo/Área%20de%20Trabalho/944shots_so.png)
-
+![944shots_so](https://github.com/berdfandrade/hero-card/assets/96706881/4ac16ca3-a0be-4ab8-a085-477eaa8ef2c5)
 
 
 ## Dependências
