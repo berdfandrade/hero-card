@@ -1,70 +1,114 @@
-# Getting Started with Create React App
+# Hero Card
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+O componente `HeroCard` é uma parte do front-end de uma 
+aplicação que consome uma API para exibir informações de um herói gerado
+ aleatoriamente. O componente exibe os atributos e detalhes do herói em 
+um cartão.
 
-## Available Scripts
+![944shots_so.png](/home/bernardo/Área%20de%20Trabalho/944shots_so.png)
 
-In the project directory, you can run:
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Dependências
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+O componente utiliza as seguintes dependências:
 
-### `npm test`
+- React: Biblioteca JavaScript para criar interfaces de usuário.
+- Chakra UI: Uma biblioteca de componentes de interface do usuário para React, que facilita a criação de UIs bonitas e responsivas.
+- React Icons: Uma biblioteca de ícones populares para React.
+- Axios: Uma biblioteca para fazer requisições HTTP.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+# Documentação do Componente HeroCard
 
-### `npm run build`
+O componente `HeroCard` é uma parte do front-end de uma aplicação que consome uma API para exibir informações de um herói gerado aleatoriamente. O componente exibe os atributos e detalhes do herói em um cartão.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Dependências
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+O componente utiliza as seguintes dependências:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- React: Biblioteca JavaScript para criar interfaces de usuário.
+- Chakra UI: Uma biblioteca de componentes de interface do usuário para React, que facilita a criação de UIs bonitas e responsivas.
+- React Icons: Uma biblioteca de ícones populares para React.
+- Axios: Uma biblioteca para fazer requisições HTTP.
 
-### `npm run eject`
+## Uso
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Para utilizar o componente `HeroCard`, siga os seguintes passos:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1. Instale as dependências necessárias no seu projeto:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```bash
+npm install react chakra-ui/react react-icons axios
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+2. Importe as dependências necessárias e o componente `HeroCard` no seu arquivo:
 
-## Learn More
+```jsx
+import React, { useEffect, useState } from "react";
+import {
+  Box,
+  Text,
+  Badge,
+  VStack,
+  HStack,
+  Flex,
+  Image,
+  Center,
+  Icon,
+} from "@chakra-ui/react";
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+import { AiFillHeart } from "react-icons/ai";
+import {
+  GiPointySword,
+  GiElfHelmet,
+  GiMuscleUp,
+  Gi3DHammer,
+} from "react-icons/gi";
+import { RiShieldFill } from "react-icons/ri";
+import { FaStar } from "react-icons/fa";
+import avatarHandle from "./avatarHandle";
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+import axios from "axios";
 
-### Code Splitting
+const HeroCard = () => {
+  // ...código do componente
+};
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+export default HeroCard;
 
-### Analyzing the Bundle Size
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+3. Utilize o componente `HeroCard` no seu aplicativo onde desejar exibir o herói:
 
-### Making a Progressive Web App
+## Props
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+O componente `HeroCard` não aceita nenhuma prop.
 
-### Advanced Configuration
+## Funcionamento
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Ao ser renderizado, o componente `HeroCard` faz uma requisição para a API em `http://localhost:5000/heroi` para obter as informações do herói aleatório. O componente utiliza o hook `useEffect` para executar essa requisição assim que o componente é montado.
 
-### Deployment
+Enquanto a requisição estiver em andamento, o componente exibe o texto "Carregando...". Assim que os dados do herói são recebidos, o componente renderiza as informações em um cartão.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## Estrutura do Cartão
 
-### `npm run build` fails to minify
+O cartão renderizado pelo componente `HeroCard` contém as seguintes informações do herói:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Nome: O nome do herói.
+- Avatar: Uma imagem representando o herói.
+- Apresentação: Uma frase de apresentação do herói.
+- Gênero: O gênero do herói, exibido como uma badge colorida.
+- Atributos: Os atributos do herói, exibidos como ícones seguidos pelo valor do atributo.
+  - HP: Pontos de vida do herói.
+  - Ataque: Valor de ataque do herói.
+  - Defesa: Valor de defesa do herói.
+  - Stamina: Valor de stamina do herói.
+- Level: O nível do herói, exibido com um ícone.
+- Estilo: O estilo ou temperamento do herói, exibido com um ícone de estrela.
+- Inventário: Lista de itens no inventário do herói.
+
+## Considerações Finais
+
+Este é um resumo da documentação do componente `HeroCard`. Lembre-se de instalar as dependências necessárias e importar corretamente os componentes e bibliotecas mencionadas. Certifique-se também de que a API em `http://localhost:5000/heroi` esteja disponível e retorne os dados esperados pelo componente.
+
+
