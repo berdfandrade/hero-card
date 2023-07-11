@@ -17,10 +17,6 @@ O componente utiliza as seguintes dependências:
 - React Icons: Uma biblioteca de ícones populares para React.
 - Axios: Uma biblioteca para fazer requisições HTTP.
 
-# Documentação do Componente HeroCard
-
-O componente `HeroCard` é uma parte do front-end de uma aplicação que consome uma API para exibir informações de um herói gerado aleatoriamente. O componente exibe os atributos e detalhes do herói em um cartão.
-
 ## Dependências
 
 O componente utiliza as seguintes dependências:
